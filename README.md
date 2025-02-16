@@ -1,79 +1,157 @@
-# Assignment –1
+ **Subversion (SVN) & Mercurial (hg) - Version Control Guide**
 
-## DevOps
+This repository demonstrates the usage of **Apache Subversion (SVN)** and **Mercurial (hg)** for version control, including installation, basic commands, troubleshooting, and hosting a project using **GitHub Pages**.
 
-### By 
-Aditi Bansal 
-500106987
-R2142220221 
+ 📌**Table of Contents**
+1. [Introduction](#introduction)
+2. [Installing Subversion (SVN)](#installing-subversion-svn)
+3. [Using Subversion (SVN)](#using-subversion-svn)
+4. [Installing Mercurial (hg)](#installing-mercurial-hg)
+5. [Using Mercurial (hg)](#using-mercurial-hg)
+6. [Common Errors & Troubleshooting](#common-errors--troubleshooting)
+7. [GitHub Pages Hosting](#github-pages-hosting)
+8. [Screenshots & Demonstration](#screenshots--demonstration)
+9. [Author](#author)
 
 ---
 
-## Mercurial: Using Mercurial (hg) for Version Control
+📌 **Introduction**
+Version control systems are essential tools for managing code changes, collaborating with teams, and maintaining project history. This guide covers:
+- **Subversion (SVN)** – A centralized version control system.
+- **Mercurial (hg)** – A distributed version control system.
 
-### Introduction
-Mercurial is a distributed version control system that allows developers to track changes in their code and collaborate with others. This document outlines the steps to clone a repository, make changes, and push those changes back to the remote repository using Mercurial.
+Both tools help developers efficiently manage and track changes in their projects.
 
 ---
 
-## Steps to Clone a Repository and Push Changes
+🚀 **Installing Subversion (SVN)**
 
-### Step 1: Clone the Repository
-To clone a repository, use the following command:
+### **Windows Installation**
+1. Download **VisualSVN Server** from [here](https://www.visualsvn.com/server/download/).
+2. Run the installer and follow the setup wizard.
+3. Install **TortoiseSVN** (GUI client) from [here](https://tortoisesvn.net/downloads.html).
+4. Restart your system to apply changes.
+5. Verify installation using:
+   ```sh
+   svn --version
+   ```
 
-sh
-hg clone <repository_url> hello
+---
 
+🔧 **Using Subversion (SVN)**
 
-Explanation: This command creates a local copy of the repository located at the specified URL. The local copy will be created in a directory named hello.
+1️⃣ **Clone an SVN Repository**
+```sh
+svn checkout <repository_url> my_project
+```
+✅ This command creates a local working copy of the repository.
 
-### Step 2: Change Directory
-Navigate into the cloned repository directory:
+2️⃣ **Navigate into the Repository**
+```sh
+cd my_project
+```
 
-sh
-cd hello
+3️⃣ **Add New Files**
+```sh
+svn add myfile.txt
+```
+✅ Adds a new file to version control.
 
+4️⃣ **Commit Changes**
+```sh
+svn commit -m "Added a new file"
+```
+✅ Saves changes to the repository with a message.
 
-Explanation: This command changes the current working directory to the hello directory, where the cloned repository resides.
+5️⃣ **Update the Repository**
+```sh
+svn update
+```
+✅ Retrieves the latest changes from the remote repository.
 
-### Step 3: Edit Files
-Make the necessary changes to the files in the repository. You can use any text editor or Integrated Development Environment (IDE) of your choice to edit the files.
+6️⃣ **Push Changes to Remote**
+```sh
+svn commit -m "My updates"
+```
+✅ Uploads committed changes to the repository.
 
-### Step 4: Add New Files
-If you have created new files or modified existing files, you need to add them to the staging area using the following command:
+---
 
-sh
-hg add <file_name>
+🚀 **Installing Mercurial (hg)**
 
+ **Windows Installation**
+1. Download Mercurial from [here](https://www.mercurial-scm.org/downloads).
+2. Run the installer and follow the setup wizard.
+3. Verify installation:
+   ```sh
+   hg --version
+   ```
 
-### Step 5: Commit Changes
-Once you have added the files, commit your changes with a descriptive message:
+---
 
-sh
-hg commit -m "My changes"
+🔧 **Using Mercurial (hg)**
 
+1️⃣ **Clone a Repository**
+```sh
+hg clone <repository_url> my_project
+```
+✅ Creates a local copy of the repository.
 
-Explanation: The -m flag allows you to include a commit message that describes the changes you made. Replace 'My changes' with a meaningful message that reflects the nature of your changes.
+2️⃣ **Navigate into the Repository**
+```sh
+cd my_project
+```
 
-### Step 6: Push Changes
-Finally, push your committed changes back to the remote repository:
+3️⃣ **Edit Files & Add Changes**
+```sh
+hg add myfile.txt
+```
+✅ Adds new or modified files to be tracked.
 
-sh
+4️⃣ **Commit Changes**
+```sh
+hg commit -m "My first commit"
+```
+✅ Saves changes to the local repository.
+
+5️⃣ **Push Changes to Remote**
+```sh
 hg push
-
-
-Explanation: This command uploads your local changes to the remote repository, making them available to others.
-
----
-
-### Common Errors and Troubleshooting
-
-#### abort: authorization failed
-This error message indicates that Mercurial is unable to authenticate your credentials when trying to push changes to the remote repository. Here are some common reasons for this issue and how to resolve them:
-
-- Access Permissions: Check if you have the necessary permissions to push to the repository. If you are trying to push to a repository that you do not own or do not have write access to, you will receive an authorization error.
-- If you are collaborating on a project, confirm with the repository owner that you have been granted the appropriate access rights.
+```
+✅ Uploads committed changes to the remote repository.
 
 ---
 
-End of Document
+⚠ **Common Errors & Troubleshooting**
+
+🔹 **SVN Authorization Failed**
+**Error Message:** `Authorization failed`
+**Solution:**
+- Verify your **username & password**.
+- Check if you have **write permissions**.
+- Use:
+  ```sh
+  svn auth --store-passwords=yes
+  ```
+
+🔹 **Mercurial Push Authorization Failed**
+**Error Message:** `abort: authorization failed`
+**Solution:**
+- Check if the **remote repository is accessible**.
+- Ensure correct authentication:
+  ```sh
+  hg push --config auth.x.username=<your-username>
+  ```
+
+---
+
+
+
+
+👤 **Author**
+**Name:** Aditi Bansal  
+**Roll Number:** 500106987  
+**Student ID:** R2142220221  
+
+---
+
