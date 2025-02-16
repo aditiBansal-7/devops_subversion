@@ -2,18 +2,7 @@
 
 This repository demonstrates the usage of **Apache Subversion (SVN)** and **Mercurial (hg)** for version control, including installation, basic commands, troubleshooting, and hosting a project using **GitHub Pages**.
 
- 📌**Table of Contents**
-1. [Introduction](#introduction)
-2. [Installing Subversion (SVN)](#installing-subversion-svn)
-3. [Using Subversion (SVN)](#using-subversion-svn)
-4. [Installing Mercurial (hg)](#installing-mercurial-hg)
-5. [Using Mercurial (hg)](#using-mercurial-hg)
-6. [Common Errors & Troubleshooting](#common-errors--troubleshooting)
-7. [GitHub Pages Hosting](#github-pages-hosting)
-8. [Screenshots & Demonstration](#screenshots--demonstration)
-9. [Author](#author)
-
----
+ ---
 
 📌 **Introduction**
 Version control systems are essential tools for managing code changes, collaborating with teams, and maintaining project history. This guide covers:
